@@ -1,0 +1,14 @@
+version: '2'
+services:
+  api-gateway:
+    image: client:1.0.0
+    container_name: client
+    environment:
+      - ZOOKEEPER_ADDRESS=zookeeper:2181
+      - ZOOKEEPER_TOPIC=node-test3
+    networks:
+      - docker_default
+
+networks:
+  docker_default:
+    external: true
